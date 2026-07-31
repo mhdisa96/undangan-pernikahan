@@ -1,4 +1,4 @@
-/* style.css - Pengaturan Desain Undangan */
+/* style.css - Pengaturan Desain Undangan Elegan & Mewah */
 
 * {
     margin: 0;
@@ -7,7 +7,12 @@
 }
 
 body {
-    background-color: #121212;
+    /* Background keren: Gradasi gelap mewah dengan efek cahaya lembut di tengah */
+    background-color: #0b0b0b;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
+        linear-gradient(to bottom, #121212, #070707);
     color: #d4af37;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -21,7 +26,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+}
+
+/* Efek garis aksen tipis di setiap section agar lebih estetik */
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    width: 40px;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.3);
 }
 
 .subtitle {
@@ -39,9 +55,10 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 38px;
     font-style: italic;
     margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .amp {
@@ -61,12 +78,13 @@ h1 {
 
 /* Quotes */
 .quote {
-    max-width: 600px;
+    max-width: 550px;
     font-size: 14px;
     line-height: 1.8;
-    color: #ccc;
+    color: #d8d8d8;
     font-style: italic;
     margin-bottom: 20px;
+    padding: 0 15px;
 }
 
 .quote-source {
@@ -78,11 +96,12 @@ h1 {
 }
 
 .welcome-text {
-    max-width: 500px;
+    max-width: 480px;
     font-size: 13px;
     line-height: 1.6;
-    color: #aaa;
+    color: #aaaaaa;
     margin-top: 25px;
+    padding: 0 15px;
 }
 
 /* Couple Section & Photo Frame */
@@ -96,16 +115,19 @@ h1 {
 }
 
 .couple-card {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 30px 20px;
+    /* Kotak kartu dengan efek kaca transparan gelap (Glassmorphism) */
+    background: rgba(26, 26, 26, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 35px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .photo-frame {
     width: 150px;
     height: 150px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 20px auto;
     border-radius: 50%;
     border: 2px solid #d4af37;
     padding: 5px;
@@ -113,6 +135,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .couple-photo {
@@ -132,20 +155,22 @@ h1 {
 
 .parents {
     font-size: 12px;
-    color: #999;
+    color: #aaaaaa;
     margin-top: 10px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Event Info */
 .event-box {
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 8px;
+    background: rgba(26, 26, 26, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
     padding: 30px 20px;
     max-width: 400px;
     width: 100%;
     margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .event-title {
@@ -157,7 +182,7 @@ h1 {
 
 .event-details {
     font-size: 13px;
-    color: #ccc;
+    color: #d8d8d8;
     line-height: 1.6;
 }
 
@@ -171,4 +196,9 @@ h1 {
     text-transform: uppercase;
     border-bottom: 1px solid #d4af37;
     padding-bottom: 3px;
+    transition: opacity 0.3s;
+}
+
+.back-home:hover {
+    opacity: 0.7;
 }
