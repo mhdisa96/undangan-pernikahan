@@ -9,6 +9,17 @@
 </head>
 <body>
 
+    <!-- Musik Latar (Audio Element) -->
+    <audio id="bg-music" loop>
+        <source src="backsound.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Tombol Musik Melayang di Pojok Kanan -->
+    <button id="music-btn" class="music-floating-btn" onclick="toggleMusic()">
+        🎵 <span id="music-text">Play</span>
+    </button>
+
     <!-- Cover Section -->
     <section class="section">
         <div class="subtitle">Undangan Pernikahan</div>
@@ -79,6 +90,38 @@
 
         <a href="index.html" class="back-home">&larr; Kembali ke Depan</a>
     </section>
+
+    <!-- Script JavaScript untuk Tombol Musik -->
+    <script>
+        const music = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-btn');
+        const musicText = document.getElementById('music-text');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                musicText.innerText = "Play";
+                musicBtn.classList.remove('playing');
+            } else {
+                music.play();
+                musicText.innerText = "Pause";
+                musicBtn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Coba putar otomatis saat halaman dimuat (beberapa browser mungkin memblokir ini sampai ada interaksi klik)
+        window.addEventListener('load', () => {
+            music.play().then(() => {
+                isPlaying = true;
+                musicText.innerText = "Pause";
+                musicBtn.classList.add('playing');
+            }).catch(error => {
+                console.log("Autoplay diblokir oleh browser, pengguna harus menekan tombol play.");
+            });
+        });
+    </script>
 
 </body>
 </html>
