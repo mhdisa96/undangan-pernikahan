@@ -172,3 +172,25 @@ h1 {
     border-bottom: 1px solid #d4af37;
     padding-bottom: 3px;
 }
+
+/* Tombol Musik Melayang */
+.music-floating-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 999;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.music-floating-btn:hover {
+    background: #d4af37;
+    color: #121212;
+}
